@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <link rel="icon" href="assets/favicon.ico" />
     <title>Angular directives for Bootstrap</title>
-    <meta name="description" content="AngularJS (Angular) native directives for Bootstrap. Small footprint (5kB gzipped!), no 3rd party JS dependencies (jQuery, bootstrap JS) required! Widgets: Accordion, Alert, Buttons, Carousel, Collapse, Dateparser, Datepicker, Datepicker Popup, Dropdown, Modal, Pager, Pagination, Popover, Position, Progressbar, Rating, Tabs, Timepicker, Tooltip, Typeahead, ">
+    <meta name="description" content="AngularJS (Angular) native directives for Bootstrap. Small footprint (5kB gzipped!), no 3rd party JS dependencies (jQuery, bootstrap JS) required! Widgets: Accordion, Alert, Buttons, Carousel, Collapse, Dateparser, Datepicker, Datepicker Popup, Dropdown, Pager, Pagination, Popover, Position, Progressbar, Rating, Tabs, Timepicker, Tooltip, Typeahead, ">
     <meta name="google-site-verification" content="7lc5HyceLDqpV_6oNHteYFfxDJH7-S3DwnJKtNUKcRg" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/0.6.7/fastclick.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -46,7 +46,7 @@
                         Directives <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#accordion">Accordion</a></li><li><a href="#alert">Alert</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#carousel">Carousel</a></li><li><a href="#collapse">Collapse</a></li><li><a href="#dateparser">Dateparser</a></li><li><a href="#datepicker">Datepicker</a></li><li><a href="#datepickerPopup">Datepicker Popup</a></li><li><a href="#dropdown">Dropdown</a></li><li><a href="#modal">Modal</a></li><li><a href="#pager">Pager</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#popover">Popover</a></li><li><a href="#position">Position</a></li><li><a href="#progressbar">Progressbar</a></li><li><a href="#rating">Rating</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#timepicker">Timepicker</a></li><li><a href="#tooltip">Tooltip</a></li><li><a href="#typeahead">Typeahead</a></li>
+                        <li><a href="#accordion">Accordion</a></li><li><a href="#alert">Alert</a></li><li><a href="#buttons">Buttons</a></li><li><a href="#carousel">Carousel</a></li><li><a href="#collapse">Collapse</a></li><li><a href="#dateparser">Dateparser</a></li><li><a href="#datepicker">Datepicker</a></li><li><a href="#datepickerPopup">Datepicker Popup</a></li><li><a href="#dropdown">Dropdown</a></li><li><a href="#pager">Pager</a></li><li><a href="#pagination">Pagination</a></li><li><a href="#popover">Popover</a></li><li><a href="#position">Position</a></li><li><a href="#progressbar">Progressbar</a></li><li><a href="#rating">Rating</a></li><li><a href="#tabs">Tabs</a></li><li><a href="#timepicker">Timepicker</a></li><li><a href="#tooltip">Tooltip</a></li><li><a href="#typeahead">Typeahead</a></li>
                     </ul>
                 </li>
                 <li><a href="#getting_started">Getting started</a></li>
@@ -155,8 +155,6 @@
                             <li><a href="#datepickerPopup">Datepicker Popup</a></li>
                         
                             <li><a href="#dropdown">Dropdown</a></li>
-                        
-                            <li><a href="#modal">Modal</a></li>
                         
                             <li><a href="#pager">Pager</a></li>
                         
@@ -2687,448 +2685,6 @@ Class to apply when the dropdown is open.</p>
   };
 
   $scope.appendToEl = angular.element(document.querySelector('#dropdown-long-content'));
-});
-</script>
-                
-                    <section id="modal">
-                        <div class="page-header">
-                          <h1>Modal<small>
-                              (<a target="_blank" href="https://github.com/angular-ui/bootstrap/tree/master/src/modal">ui.bootstrap.modal</a>)
-                          </small></h1>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6 show-grid">
-                                <div ng-controller="ModalDemoCtrl as $ctrl">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in $ctrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ $ctrl.selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-        </div>
-    </script>
-
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open('sm')">Small modal</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.toggleAnimation()">Toggle Animation ({{ $ctrl.animationsEnabled }})</button>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.openComponentModal()">Open a component modal!</button>
-    <div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>
-</div>
-
-                            </div>
-                            <div class="col-md-6">
-                                <p><code>$uibModal</code> is a service to create modal windows.
-Creating modals is straightforward: create a template, a controller and reference them when using <code>$uibModal</code>.</p>
-<p>The <code>$uibModal</code> service has only one method: <code>open(options)</code>.</p>
-<h3 id="-uibmodal-s-open-function">$uibModal&#39;s open function</h3>
-<h4 id="options-parameter">options parameter</h4>
-<ul>
-<li><p><code>animation</code>
-<em>(Type: <code>boolean</code>, Default: <code>true</code>)</em> -
-Set to false to disable animations on new modal/backdrop. Does not toggle animations for modals/backdrops that are already displayed.</p>
-</li>
-<li><p><code>appendTo</code>
-<em>(Type: <code>angular.element</code>, Default: <code>body</code>: Example: <code>$document.find(&#39;aside&#39;).eq(0)</code>)</em> -
-Appends the modal to a specific element.</p>
-</li>
-<li><p><code>ariaDescribedBy</code>
-<em>(Type: <code>string</code>, <code>my-modal-description</code>)</em> -
-Sets the <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-describedby"><code>aria-describedby</code></a> property on the modal. The value should be an id (without the leading <code>#</code>) pointing to the element that describes your modal. Typically, this will be the text on your modal, but does not include something the user would interact with, like buttons or a form. Omitting this option will not impact sighted users but will weaken your accessibility support.</p>
-</li>
-<li><p><code>ariaLabelledBy</code>
-<em>(Type: <code>string</code>, <code>my-modal-title</code>)</em> -
-Sets the <a href="https://www.w3.org/TR/wai-aria/states_and_properties#aria-labelledby"><code>aria-labelledby</code></a> property on the modal. The value should be an id (without the leading <code>#</code>) pointing to the element that labels your modal. Typically, this will be a header element. Omitting this option will not impact sighted users but will weaken your accessibility support.</p>
-</li>
-<li><p><code>backdrop</code>
-<em>(Type: <code>boolean|string</code>, Default: <code>true</code>)</em> -
-Controls presence of a backdrop. Allowed values: <code>true</code> (default), <code>false</code> (no backdrop), <code>&#39;static&#39;</code> (disables modal closing by click on the backdrop).</p>
-</li>
-<li><p><code>backdropClass</code>
-<em>(Type: <code>string</code>)</em> -
-Additional CSS class(es) to be added to a modal backdrop template.</p>
-</li>
-<li><p><code>bindToController</code>
-<em>(Type: <code>boolean</code>, Default: <code>false</code>)</em> -
-When used with <code>controllerAs</code> &amp; set to <code>true</code>, it will bind the $scope properties onto the controller.</p>
-</li>
-<li><p><code>component</code>
-<em>(Type: <code>string</code>, Example: <code>myComponent</code>)</em> -
-A string reference to the component to be rendered that is registered with Angular&#39;s compiler. If using a directive, the directive must have <code>restrict: &#39;E&#39;</code> and a template or templateUrl set.</p>
-<p>It supports these bindings:</p>
-<ul>
-<li><p><code>close</code> - A method that can be used to close a modal, passing a result. The result must be passed in this format: <code>{$value: myResult}</code></p>
-</li>
-<li><p><code>dismiss</code> - A method that can be used to dismiss a modal, passing a result. The result must be passed in this format: <code>{$value: myRejectedResult}</code></p>
-</li>
-<li><p><code>modalInstance</code> - The modal instance. This is the same <code>$uibModalInstance</code> injectable found when using <code>controller</code>.</p>
-</li>
-<li><p><code>resolve</code> - An object of the modal resolve values. See <a href="#ui-router-resolves">UI Router resolves</a> for details.</p>
-</li>
-</ul>
-</li>
-<li><p><code>controller</code>
-<em>(Type: <code>function|string|array</code>, Example: <code>MyModalController</code>)</em> -
-A controller for the modal instance, either a controller name as a string, or an inline controller function, optionally wrapped in array notation for dependency injection. Allows the controller-as syntax. Has a special <code>$uibModalInstance</code> injectable to access the modal instance.</p>
-</li>
-<li><p><code>controllerAs</code>
-<em>(Type: <code>string</code>, Example: <code>ctrl</code>)</em> -
-An alternative to the controller-as syntax. Requires the <code>controller</code> option to be provided as well.</p>
-</li>
-<li><p><code>keyboard</code> -
-<em>(Type: <code>boolean</code>, Default: <code>true</code>)</em> -
-Indicates whether the dialog should be closable by hitting the ESC key.</p>
-</li>
-<li><p><code>openedClass</code>
-<em>(Type: <code>string</code>, Default: <code>modal-open</code>)</em> -
-Class added to the <code>body</code> element when the modal is opened.</p>
-</li>
-<li><p><code>resolve</code>
-<em>(Type: <code>Object</code>)</em> -
-Members that will be resolved and passed to the controller as locals; it is equivalent of the <code>resolve</code> property in the router.</p>
-</li>
-<li><p><code>scope</code>
-<em>(Type: <code>$scope</code>)</em> -
-The parent scope instance to be used for the modal&#39;s content. Defaults to <code>$rootScope</code>.</p>
-</li>
-<li><p><code>size</code>
-<em>(Type: <code>string</code>, Example: <code>lg</code>)</em> -
-Optional suffix of modal window class. The value used is appended to the <code>modal-</code> class, i.e. a value of <code>sm</code> gives <code>modal-sm</code>.</p>
-</li>
-<li><p><code>template</code>
-<em>(Type: <code>string</code>)</em> -
-Inline template representing the modal&#39;s content.</p>
-</li>
-<li><p><code>templateUrl</code>
-<em>(Type: <code>string</code>)</em> -
-A path to a template representing modal&#39;s content. You need either a <code>template</code> or <code>templateUrl</code>.</p>
-</li>
-<li><p><code>windowClass</code>
-<em>(Type: <code>string</code>)</em> -
-Additional CSS class(es) to be added to a modal window template.</p>
-</li>
-<li><p><code>windowTemplateUrl</code>
-<em>(Type: <code>string</code>, Default: <code>uib/template/modal/window.html</code>)</em> -
-A path to a template overriding modal&#39;s window template.</p>
-</li>
-<li><p><code>windowTopClass</code>
-<em>(Type: <code>string</code>)</em> -
-CSS class(es) to be added to the top modal window.</p>
-</li>
-</ul>
-<p>Global defaults may be set for <code>$uibModal</code> via <code>$uibModalProvider.options</code>.</p>
-<h4 id="return">return</h4>
-<p>The <code>open</code> method returns a modal instance, an object with the following properties:</p>
-<ul>
-<li><p><code>close(result)</code>
-<em>(Type: <code>function</code>)</em> -
-Can be used to close a modal, passing a result.</p>
-</li>
-<li><p><code>dismiss(reason)</code>
-<em>(Type: <code>function</code>)</em> -
-Can be used to dismiss a modal, passing a reason.</p>
-</li>
-<li><p><code>result</code>
-<em>(Type: <code>promise</code>)</em> -
-Is resolved when a modal is closed and rejected when a modal is dismissed.</p>
-</li>
-<li><p><code>opened</code>
-<em>(Type: <code>promise</code>)</em> -
-Is resolved when a modal gets opened after downloading content&#39;s template and resolving all variables.</p>
-</li>
-<li><p><code>closed</code>
-<em>(Type: <code>promise</code>)</em> -
-Is resolved when a modal is closed and the animation completes.</p>
-</li>
-<li><p><code>rendered</code>
-<em>(Type: <code>promise</code>)</em> -
-Is resolved when a modal is rendered.</p>
-</li>
-</ul>
-<hr>
-<p>The scope associated with modal&#39;s content is augmented with:</p>
-<ul>
-<li><p><code>$close(result)</code>
-<em>(Type: <code>function</code>)</em> -
-A method that can be used to close a modal, passing a result.</p>
-</li>
-<li><p><code>$dismiss(reason)</code>
-<em>(Type: <code>function</code>)</em> -
-A method that can be used to dismiss a modal, passing a reason.</p>
-</li>
-</ul>
-<p>Those methods make it easy to close a modal window without a need to create a dedicated controller.</p>
-<p>Also, when using <code>bindToController</code>, you can define an <code>$onInit</code> method in the controller that will fire upon initialization.</p>
-<hr>
-<p>Events fired:</p>
-<ul>
-<li><p><code>$uibUnscheduledDestruction</code> -
-This event is fired if the $scope is destroyed via unexpected mechanism, such as it being passed in the modal options and a $route/$state transition occurs. The modal will also be dismissed.</p>
-</li>
-<li><p><code>modal.closing</code> -
-This event is broadcast to the modal scope before the modal closes. If the listener calls preventDefault() on the event, then the modal will remain open.
-Also, the <code>$close</code> and <code>$dismiss</code> methods returns true if the event was executed. This event also includes a parameter for the result/reason and a boolean that indicates whether the modal is being closed (true) or dismissed.</p>
-</li>
-</ul>
-<h5 id="ui-router-resolves">UI Router resolves</h5>
-<p>If one wants to have the modal resolve using <a href="https://github.com/angular-ui/ui-router">UI Router&#39;s</a> pre-1.0 resolve mechanism, one can call <code>$uibResolve.setResolver(&#39;$resolve&#39;)</code> in the configuration phase of the application. One can also provide a custom resolver as well, as long as the signature conforms to UI Router&#39;s <a href="http://angular-ui.github.io/ui-router/site/#/api/ui.router.util.$resolve">$resolve</a>.</p>
-<p>When the modal is opened with a controller, a <code>$resolve</code> object is exposed on the template with the resolved values from the resolve object. If using the component option, see details on how to access this object in component section of the modal documentation.</p>
-
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row code">
-                            <div class="col-md-12" ng-controller="PlunkerCtrl">
-                                <div class="pull-right">
-                                    <button type="button" class="btn btn-info plunk-btn" ng-click="edit('1.5.8', '3.3.7', '2.1.4-p2d4', 'modal')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>
-                                </div>
-                                <uib-tabset active="activeTab">
-                                    <uib-tab index="0" heading="Markup">
-                                        <div plunker-content="markup">
-                                            <pre ng-non-bindable><code data-language="html">&lt;div ng-controller=&quot;ModalDemoCtrl as $ctrl&quot;&gt;
-    &lt;script type=&quot;text/ng-template&quot; id=&quot;myModalContent.html&quot;&gt;
-        &lt;div class=&quot;modal-header&quot;&gt;
-            &lt;h3 class=&quot;modal-title&quot; id=&quot;modal-title&quot;&gt;I&#x27;m a modal!&lt;/h3&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;modal-body&quot; id=&quot;modal-body&quot;&gt;
-            &lt;ul&gt;
-                &lt;li ng-repeat=&quot;item in $ctrl.items&quot;&gt;
-                    &lt;a href=&quot;#&quot; ng-click=&quot;$event.preventDefault(); $ctrl.selected.item = item&quot;&gt;{{ item }}&lt;/a&gt;
-                &lt;/li&gt;
-            &lt;/ul&gt;
-            Selected: &lt;b&gt;{{ $ctrl.selected.item }}&lt;/b&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;modal-footer&quot;&gt;
-            &lt;button class=&quot;btn btn-primary&quot; type=&quot;button&quot; ng-click=&quot;$ctrl.ok()&quot;&gt;OK&lt;/button&gt;
-            &lt;button class=&quot;btn btn-warning&quot; type=&quot;button&quot; ng-click=&quot;$ctrl.cancel()&quot;&gt;Cancel&lt;/button&gt;
-        &lt;/div&gt;
-    &lt;/script&gt;
-
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;$ctrl.open()&quot;&gt;Open me!&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;$ctrl.open(&#x27;lg&#x27;)&quot;&gt;Large modal&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;$ctrl.open(&#x27;sm&#x27;)&quot;&gt;Small modal&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;$ctrl.toggleAnimation()&quot;&gt;Toggle Animation ({{ $ctrl.animationsEnabled }})&lt;/button&gt;
-    &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; ng-click=&quot;$ctrl.openComponentModal()&quot;&gt;Open a component modal!&lt;/button&gt;
-    &lt;div ng-show=&quot;$ctrl.selected&quot;&gt;Selection from a modal: {{ $ctrl.selected }}&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                                        </div>
-                                    </uib-tab>
-                                    <uib-tab index="1" heading="JavaScript">
-                                        <div plunker-content="javascript">
-                                            <pre ng-non-bindable><code data-language="javascript">angular.module(&#x27;ui.bootstrap.demo&#x27;).controller(&#x27;ModalDemoCtrl&#x27;, function ($uibModal, $log) {
-  var $ctrl = this;
-  $ctrl.items = [&#x27;item1&#x27;, &#x27;item2&#x27;, &#x27;item3&#x27;];
-
-  $ctrl.animationsEnabled = true;
-
-  $ctrl.open = function (size) {
-    var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
-      ariaLabelledBy: &#x27;modal-title&#x27;,
-      ariaDescribedBy: &#x27;modal-body&#x27;,
-      templateUrl: &#x27;myModalContent.html&#x27;,
-      controller: &#x27;ModalInstanceCtrl&#x27;,
-      controllerAs: &#x27;$ctrl&#x27;,
-      size: size,
-      resolve: {
-        items: function () {
-          return $ctrl.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info(&#x27;Modal dismissed at: &#x27; + new Date());
-    });
-  };
-
-  $ctrl.openComponentModal = function () {
-    var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
-      component: &#x27;modalComponent&#x27;,
-      resolve: {
-        items: function () {
-          return $ctrl.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info(&#x27;modal-component dismissed at: &#x27; + new Date());
-    });
-  };
-
-  $ctrl.toggleAnimation = function () {
-    $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
-  };
-});
-
-// Please note that $uibModalInstance represents a modal window (instance) dependency.
-// It is not the same as the $uibModal service used above.
-
-angular.module(&#x27;ui.bootstrap.demo&#x27;).controller(&#x27;ModalInstanceCtrl&#x27;, function ($uibModalInstance, items) {
-  var $ctrl = this;
-  $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
-  };
-
-  $ctrl.ok = function () {
-    $uibModalInstance.close($ctrl.selected.item);
-  };
-
-  $ctrl.cancel = function () {
-    $uibModalInstance.dismiss(&#x27;cancel&#x27;);
-  };
-});
-
-// Please note that the close and dismiss bindings are from $uibModalInstance.
-
-angular.module(&#x27;ui.bootstrap.demo&#x27;).component(&#x27;modalComponent&#x27;, {
-  templateUrl: &#x27;myModalContent.html&#x27;,
-  bindings: {
-    resolve: &#x27;&lt;&#x27;,
-    close: &#x27;&amp;&#x27;,
-    dismiss: &#x27;&amp;&#x27;
-  },
-  controller: function () {
-    var $ctrl = this;
-
-    $ctrl.$onInit = function () {
-      $ctrl.items = $ctrl.resolve.items;
-      $ctrl.selected = {
-        item: $ctrl.items[0]
-      };
-    };
-
-    $ctrl.ok = function () {
-      $ctrl.close({$value: $ctrl.selected.item});
-    };
-
-    $ctrl.cancel = function () {
-      $ctrl.dismiss({$value: &#x27;cancel&#x27;});
-    };
-  }
-});
-</code></pre>
-                                        </div>
-                                    </uib-tab>
-                                </uib-tabset>
-                            </div>
-                        </div>
-                    </section>
-                    <script>angular.module('ui.bootstrap.demo').controller('ModalDemoCtrl', function ($uibModal, $log) {
-  var $ctrl = this;
-  $ctrl.items = ['item1', 'item2', 'item3'];
-
-  $ctrl.animationsEnabled = true;
-
-  $ctrl.open = function (size) {
-    var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
-      ariaLabelledBy: 'modal-title',
-      ariaDescribedBy: 'modal-body',
-      templateUrl: 'myModalContent.html',
-      controller: 'ModalInstanceCtrl',
-      controllerAs: '$ctrl',
-      size: size,
-      resolve: {
-        items: function () {
-          return $ctrl.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info('Modal dismissed at: ' + new Date());
-    });
-  };
-
-  $ctrl.openComponentModal = function () {
-    var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
-      component: 'modalComponent',
-      resolve: {
-        items: function () {
-          return $ctrl.items;
-        }
-      }
-    });
-
-    modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
-    }, function () {
-      $log.info('modal-component dismissed at: ' + new Date());
-    });
-  };
-
-  $ctrl.toggleAnimation = function () {
-    $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
-  };
-});
-
-// Please note that $uibModalInstance represents a modal window (instance) dependency.
-// It is not the same as the $uibModal service used above.
-
-angular.module('ui.bootstrap.demo').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
-  var $ctrl = this;
-  $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
-  };
-
-  $ctrl.ok = function () {
-    $uibModalInstance.close($ctrl.selected.item);
-  };
-
-  $ctrl.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-});
-
-// Please note that the close and dismiss bindings are from $uibModalInstance.
-
-angular.module('ui.bootstrap.demo').component('modalComponent', {
-  templateUrl: 'myModalContent.html',
-  bindings: {
-    resolve: '<',
-    close: '&',
-    dismiss: '&'
-  },
-  controller: function () {
-    var $ctrl = this;
-
-    $ctrl.$onInit = function () {
-      $ctrl.items = $ctrl.resolve.items;
-      $ctrl.selected = {
-        item: $ctrl.items[0]
-      };
-    };
-
-    $ctrl.ok = function () {
-      $ctrl.close({$value: $ctrl.selected.item});
-    };
-
-    $ctrl.cancel = function () {
-      $ctrl.dismiss({$value: 'cancel'});
-    };
-  }
 });
 </script>
                 
@@ -6140,32 +5696,6 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
-               ng-class="{'btn-primary': module.stackedMap}"
-               ng-model="module.stackedMap"
-               uib-btn-checkbox
-               ng-change="selectedChanged('stackedMap', module.stackedMap)">
-                  Stacked Map
-              </button>
-              
-            
-              
-              <button type="button" class="btn btn-default"
-               style="width: 33%; border-radius: 0;"
-               ng-class="{'btn-primary': module.modal}"
-               ng-model="module.modal"
-               uib-btn-checkbox
-               ng-change="selectedChanged('modal', module.modal)">
-                  Modal
-              </button>
-              
-                </div>
-              
-            
-              
-                <div class="btn-group" style="width: 100%;">
-              
-              <button type="button" class="btn btn-default"
-               style="width: 33%; border-radius: 0;"
                ng-class="{'btn-primary': module.paging}"
                ng-model="module.paging"
                uib-btn-checkbox
@@ -6184,7 +5714,11 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Pager
               </button>
               
+                </div>
+              
             
+              
+                <div class="btn-group" style="width: 100%;">
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6195,11 +5729,18 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Pagination
               </button>
               
-                </div>
-              
             
               
-                <div class="btn-group" style="width: 100%;">
+              <button type="button" class="btn btn-default"
+               style="width: 33%; border-radius: 0;"
+               ng-class="{'btn-primary': module.stackedMap}"
+               ng-model="module.stackedMap"
+               uib-btn-checkbox
+               ng-change="selectedChanged('stackedMap', module.stackedMap)">
+                  Stacked Map
+              </button>
+              
+            
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6210,7 +5751,11 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Tooltip
               </button>
               
+                </div>
+              
             
+              
+                <div class="btn-group" style="width: 100%;">
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6232,11 +5777,7 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Progressbar
               </button>
               
-                </div>
-              
             
-              
-                <div class="btn-group" style="width: 100%;">
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6247,7 +5788,11 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Rating
               </button>
               
+                </div>
+              
             
+              
+                <div class="btn-group" style="width: 100%;">
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6269,11 +5814,7 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                   Timepicker
               </button>
               
-                </div>
-              
             
-              
-                <div class="btn-group" style="width: 100%;">
               
               <button type="button" class="btn btn-default"
                style="width: 33%; border-radius: 0;"
@@ -6283,6 +5824,8 @@ Comprehension Angular expression (see <a href="http://docs.angularjs.org/api/ng.
                ng-change="selectedChanged('typeahead', module.typeahead)">
                   Typeahead
               </button>
+              
+                </div>
               
             
         </div>
